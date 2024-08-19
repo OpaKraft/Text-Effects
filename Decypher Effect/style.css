@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(224, 182, 150);
+    font-family: monospace, monospace;
+}
+
+.container {
+    width: 30vw;
+    text-align: left;
+    border-radius: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: rgb(234, 234, 234);
+    padding: 80px;
+}
+
+.container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-decoration: underline;
+    color: rgb(13, 13, 13);
+}
+
+.container p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: normal;
+    padding: 50px 0px;
+    line-height: 1.4;
+    color: rgb(125, 123, 122);
+}
+
+.container a {
+    font-size: 1.6rem;
+    margin-top: 50px;
+    margin-left: 70%;
+}
