@@ -5,16 +5,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(224, 182, 150);
+    background-color: rgba(255, 255, 255, 0.808);
     font-family: monospace, monospace;
+    color: greenyellow;
 }
 
 .container {
-    width: 30vw;
+    width: 800px;
     text-align: left;
     border-radius: 25px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(0, 0, 0);
     padding: 80px;
 }
 
@@ -22,7 +23,6 @@ body {
     font-size: 3rem;
     font-weight: 700;
     text-decoration: underline;
-    color: rgb(13, 13, 13);
 }
 
 .container p {
@@ -31,11 +31,13 @@ body {
     letter-spacing: normal;
     padding: 50px 0px;
     line-height: 1.4;
-    color: rgb(125, 123, 122);
+    opacity: 0;
 }
 
 .container a {
+    color: greenyellow;
+    text-decoration: underline;
     font-size: 1.6rem;
     margin-top: 50px;
-    margin-left: 70%;
+    margin-left: 75%;
 }
