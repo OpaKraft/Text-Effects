@@ -19,25 +19,9 @@ body {
     padding: 80px;
 }
 
-.container h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-decoration: underline;
-}
-
 .container p {
     font-size: 1.6rem;
     font-weight: 300;
     letter-spacing: normal;
-    padding: 50px 0px;
     line-height: 1.4;
-    opacity: 0;
-}
-
-.container a {
-    color: greenyellow;
-    text-decoration: underline;
-    font-size: 1.6rem;
-    margin-top: 50px;
-    margin-left: 75%;
 }

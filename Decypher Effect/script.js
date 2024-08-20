@@ -1,25 +1,36 @@
-const symbolsList = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', ':', ';', '"', "'", '<', '>', ',', '.', '?', '/', '~', '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-const originalText = new SplitType('p')
-const paragraphText = new SplitType('p')
-let index = 0
+// decipherAnimation() function is a function that takes a list of symbols and apply a decipher effect to a target element.
+// The function uses :
+//  - GSAP library for animations (see https://greensock.com/gsap/)
+//  - SplitType library for splitting the text into characters (see https://www.npmjs.com/package/split-type )
 
-paragraphText.chars.forEach((char, i) => {   
-    gsap.set(char, {
-        innerHTML : symbolsList[Math.floor(Math.random() * symbolsList.length)],
-    })
-})
+// Example of a chars list used for the animation :
+let alphabetList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '?', '!']
 
-gsap.set(paragraphText.lines, {
-    x: -10
-})
+// Using the decipherAnimation() function :
+// 1. First parameter is the list of symbols you want to use
+// 2. Second parameter is the duration of the animation in milliseconds
+// 3. Third parameter is the target element you want to apply the animation to
+decipherAnimation(alphabetList, 2, 'p');
 
-const tl = gsap.timeline({
-    repeatDelay: 0.5
-})
 
-tl
-    .to(paragraphText.chars, {
-        duration: 0.001,
+//Function declaration :
+function decipherAnimation(symbolList, duration, targetElement)  {
+
+    duration = duration / 1000;
+    originalText = new SplitType(targetElement);
+    paragraphText = new SplitType(targetElement);
+    index = 0;
+
+    const tl = gsap.timeline({});
+
+    paragraphText.chars.forEach((char, i) => {   
+        gsap.set(char, {
+            innerHTML : symbolList[Math.floor(Math.random() * symbolList.length)],
+        });
+    });
+
+    tl.to(paragraphText.chars, {
+        duration: duration,
         innerHTML: () => {
             index++
             if (originalText.chars[index-1].textContent !== ' ') {
@@ -28,26 +39,11 @@ tl
                 return ' '
             }
         },
-        stagger: 0.003,
-    })
-    .to('p', {
-        opacity: 1,
-        duration: 1.5
-    }, '<')
-    .to(paragraphText.lines, {
-        x: 0,
-        stagger: 0.05,
-        duration: 2,
-        ease: 'back.out(1.7)'
-        
-    }, '<')
+        stagger: duration,
+    });
+}
 
-// To do:
-// Add the effect to the title and the link element
-// Add a little mouvement to the container
-// Post the final resutlt on codepen
-// multiple layers of text changes ???
-// Refactor the code (maybe...)
+
 
 
 
