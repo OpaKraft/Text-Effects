@@ -15,21 +15,21 @@ decipherAnimation(alphabetList, 2, 'p');
 
 //Function declaration :
 function decipherAnimation(symbolList, duration, targetElement)  {
-
+    
+    index = 0;
     duration = duration / 1000;
     originalText = new SplitType(targetElement);
     paragraphText = new SplitType(targetElement);
-    index = 0;
 
-    const tl = gsap.timeline({});
-
-    paragraphText.chars.forEach((char, i) => {   
-        gsap.set(char, {
-            innerHTML : symbolList[Math.floor(Math.random() * symbolList.length)],
-        });
+    const tl = gsap.timeline({
     });
 
-    tl.to(paragraphText.chars, {
+    tl.fromTo(paragraphText.chars, {
+        innerHTML: () => {
+            return symbolList[Math.floor(Math.random() * symbolList.length)]
+        },
+    }, 
+    { 
         duration: duration,
         innerHTML: () => {
             index++
@@ -39,7 +39,7 @@ function decipherAnimation(symbolList, duration, targetElement)  {
                 return ' '
             }
         },
-        stagger: duration,
+        stagger: duration
     });
 }
 
